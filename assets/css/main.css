@@ -1,0 +1,337 @@
+@import url(font-awesome.min.css);
+/*@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico");*/
+@import url(font-lato.css);
+
+/************************************* Global Settings *************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    font-family: "Lato", Helvetica, sans-serif;
+}
+
+/************************************* List Settings *************************************/
+#showall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 6em);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    overflow-y: auto;
+    padding: 3em 0;
+    z-index: 10000;
+}
+
+#showall .university-panel {
+    max-width: 55em;
+    width: calc(100% - 6em);
+    margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+    #showall .university-panel {
+        max-width: 90%;
+        width: 90%;
+    }
+}
+
+#showall header.university-info,
+#showall section.university-list {
+    /*width: 55em;*/
+    /*vertical-align: top;*/
+}
+#showall header.university-info a,
+#showall section.university-list a {
+    color: inherit;
+    text-decoration: none;
+}
+#showall header.university-info a:hover,
+#showall section.university-list a:hover {
+    text-decoration: underline;
+}
+#showall header.university-info {
+    margin-bottom: 1em;
+    overflow: hidden;
+}
+#showall section.university-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+#showall .university-logo {
+    display: inline-block;
+    vertical-align: top;
+    height: 6em;
+    width: 6em;
+}
+#showall .university-logo img {
+    height: 5em;
+    width: 5em;
+    padding: .5em;
+}
+#showall .university-text {
+    display: inline-block;
+    vertical-align: top;
+    height: 4em;
+    width: calc(100% - 6em - 20px);
+    margin: 1em 0 1em 10px;
+}
+#showall .university-name {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#showall .university-address {
+    display: block;
+    margin-top: .2em;
+    font-size: 1.2em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#showall .university-member {
+    box-sizing: border-box;
+    flex: 0 0 25%;
+}
+#showall .member-avatar {
+    height: 9em;
+    width: 10em;
+    margin: 1em auto;
+}
+#showall .member-avatar img {
+    height: 8em;
+    width: 8em;
+    padding: .5em 1em;
+    border-radius: 50%;
+}
+#showall .member-name {
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: bold;
+    text-align: center;
+    white-space: normal;
+    margin-bottom: .5em;
+}
+#showall .member-title {
+    font-size: .8em;
+    line-height: 1.2em;
+    text-align: center;
+    white-space: normal;
+}
+
+@media screen and (max-width: 736px) {
+    #showall .university-logo {
+        height: 5em;
+        width: 5em;
+    }
+    #showall .university-logo img {
+        height: 4em;
+        width: 4em;
+        padding: .5em;
+    }
+    #showall .university-text {
+        height: 3em;
+        margin: 1em 0 1em 10px;
+    }
+    #showall .university-name {
+        font-size: 1.2em;
+    }
+    #showall .university-address {
+        font-size: 1em;
+    }
+
+    #showall .university-member {
+        flex: 0 0 33.3%;
+    }
+    #showall .member-avatar {
+        height: 6em;
+        width: 7em;
+        margin: 1em auto;
+    }
+    #showall .member-avatar img {
+        height: 5em;
+        width: 5em;
+        padding: .5em 1em;
+    }
+}
+
+#show-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 15px;
+    font: 12px/20px "Lato", Helvetica, sans-serif !important;
+    font-weight: 800 !important;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+    display: inline-block;
+}
+#show-button a {
+    cursor: pointer;
+    display: inline-block;
+    padding: 3px 10px;
+    color: #e9ebf1;
+    text-decoration: none;
+    letter-spacing: .5px;
+}
+#show-button a:hover {
+    color: #ffffff;
+}
+
+/************************************* Map / Earth Settings *************************************/
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#earth {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+}
+
+#styles-selector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 15px;
+    font: 12px/20px "Lato", Helvetica, sans-serif !important;
+    font-weight: 800 !important;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10001;
+    display: inline-block;
+}
+#styles-selector span {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 16px;
+    padding: 3px 10px;
+    color: #e9ebf1;
+}
+#styles-selector span:hover {
+    color: #ffffff;
+}
+#styles-selector .active {
+    color: rgba(0, 0, 0, 0.5);
+    background: #e9ebf1;
+    cursor: default;
+}
+#styles-selector .active:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.marker {
+    display: block;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background: no-repeat center;
+}
+
+/************************************* Popup Settings *************************************/
+.mypopup header.university-info,
+.mypopup section.university-list {
+    max-width: 24em;
+    overflow-x: auto;
+    white-space: nowrap;
+    vertical-align: top;
+}
+.mypopup header.university-info a,
+.mypopup section.university-list a {
+    color: inherit;
+    text-decoration: none;
+}
+.mypopup header.university-info a:hover,
+.mypopup section.university-list a:hover {
+    text-decoration: underline;
+}
+.mypopup header.university-info {
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.mypopup .university-logo {
+    float: left;
+    height: 2.4em;
+    width: 2.4em;
+}
+.mypopup .university-logo img {
+    height: 2em;
+    width: 2em;
+    padding: .2em;
+}
+.mypopup .university-text {
+    float: left;
+    height: 2.4em;
+    line-height: 2.4em;
+    overflow: hidden;
+    margin-left: 5px;
+}
+.mypopup .university-text .university-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.mypopup .university-member {
+    display: inline-block;
+    vertical-align: top;
+    width: 6em;
+}
+.mypopup .member-avatar {
+    height: 6em;
+    width: 6em;
+}
+.mypopup .member-avatar img {
+    height: 5em;
+    width: 5em;
+    padding: .5em .5em;
+    border-radius: 50%;
+}
+.mypopup .member-name {
+    font-size: .8em;
+    line-height: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    white-space: normal;
+    margin-bottom: .2em;
+}
+.mypopup .member-title {
+    font-size: .5em;
+    line-height: 1.2em;
+    text-align: center;
+    white-space: normal;
+}
